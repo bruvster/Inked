@@ -1,0 +1,43 @@
+INTRODUCTION
+"Inked" is a simple database application program for a Tattoo Parlor Booking System that features an easy to use command line interface. Inked allows an employee to log in with their employee number on the command line, and the Inked experience from there will revolve around that employee. This booking system has been designed with the use case that the tattoo artists own the shop, and they do not have a receptionist. Because of this, they need an easy to use application that allows them to do most of the heavy lifting in their day to day operations. 
+    
+The shop has a consistent hourly rate of $150, and there is a 24 hour cancellation policy where a customer can cancel at any time, but within 24 hours of their appointment time they will have to pay a cancellation fee of $150 (1 hour of services). The shop is open every day from 9am to 5pm.
+
+DATA DESCRIPTION
+There are 4 classes/objects/relations in Inked: Customer, Artist, Tattoo, Appointment.
+An Artist and a customer have a many-to-many relationship, which is consistent with tattoo shop business logic (a customer can be tattood by any artist, as many times as they want).
+An appointment and a tattoo have a one-to-one relationship (however in the database they are seperate and logically connected by finding a date match between the two tables).
+-->didnt want to have a foreign key here because the date VERY rarely might differ
+A customer and a tattoo have a one-to-many relationship
+An artist and a tattoo have a one-to-many relationship
+
+APPLICATION REQUIREMENTS
+The functionalities include:
+-Keep a record of all customers of the shop, including ones who have cancelled appointments
+-Book new appointments for customers, and keep track of their cancel date
+-Add new customers, must be done before making a new appointment with a new customer
+-Input tattoo info once completed, and generate a cost for the customer (lengthx$150)
+-View all upcoming appointments (remember, centric to the logged in employee)
+-View any potential touch up dates for tattoos (not appointments, seperate, free, informal)
+-View number of tattoos a customer has had at the shop (in customer look up)
+-View number of tattoos an employee has given (in employee + shop metrics)
+ -View overall total revenue employee, and shop in metrics
+
+DATABASE DESIGN
+present in drop.sql, tables.sql, and data.sql
+
+IMPLEMENTATION + TESTING
+I was able to invision and complete this project in a few days, and I believe that I was able to implement all of the functionalitites I initially planned. As I was building my application, I came up with some extra functionalities. A few of these were not implemented as they were already stretch goals, but I included them in the README.txt.
+I grew my sample data as I tested things, adding more data where needed to test all the cases I could think of. Due to time constraints, I was unable to develop automated test scripts and input files. 
+That being said, I used my menu() function to ensure I developed in a modular fashion:
+The menu() has switches for the user input that calls the different funcitons I implemented. I build the menu around the function calls as if they were working, and then I commented out the calls themselves. I then worked on implementing the functions one by one, uncommenting only that function call and doing my own exhaustive tests before moving on to the next function. This worked very well, and allowed me to compile very frequently throughout development. I never spent more than 3 mins at a time debugging due to this approach.
+
+CONCLUSION + FUTURE WORK
+This project was a real joy for me to code. This is the first time I have come up with an idea from scratch and implemented it over two days. I know this is not best practice and we were encouraged to start planning early, but I want to be honest with you in that I didn't have any extra time to start until yesterday due to my 375 project.
+
+Because of my late start, I knew I had to be incredibly organized and realistic, while also taking time to "map" out what the app would look like and how it would work. I followed the steps in order that you have, just in a lot less time. 
+
+An incredible assistance to me in developing Inked so quickly was the fact that I did all of the database coding for my 375 project, thanks to my enrollment in this course. I spent a lot of time over the last week debugging that database application, so everything was very fresh in my mind. I also ventured into areas I was unable to implement in the last coding assignment, such as finally figuring out how to use OCCI Date object, so much easier. 
+
+This is my first project that I am very much looking forward to putting in my portfolio and on git hub. Additionally, I am starting a student job next week where I have been hired to manage my new companies database dashboard. The work I have done on this project and over the whole course are absolutely pivotal to me getting this job, and will be crucial in improving my performance. I also am very happy that although I struggled in this course at the start of the semester (I had too many courses, I didnt drop calc 2 until after the 2nd midterm), I managed to turn it around and am feeling confident going into the final exam. Thank you for a great semester!
+Mia
